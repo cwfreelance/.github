@@ -1,0 +1,83 @@
+name: Bug report
+description: Report something that's broken or behaves differently than it should.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One bug per report. Using AI to write this is fine, but every fact in it should be something you saw yourself.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences on what's broken and where.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps from a fresh start, with the exact inputs, URLs, commands or settings you used.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened, stated so someone could check it. "The saved file opens without an error", not "it should work".
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead. Describe only what you observed; theories about the cause go in "Suspected cause" below. Attach screenshots here if the bug is visual.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Error output
+      description: Error messages, console output, logs or stack traces, pasted exactly as they appeared. Don't summarize or retype them.
+      render: text
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Version or commit, OS, browser or runtime, and whether it was production, local or CI.
+      placeholder: |
+        Version or commit:
+        OS:
+        Browser or runtime:
+        Production, local or CI:
+    validations:
+      required: true
+  - type: textarea
+    id: suspected-cause
+    attributes:
+      label: Suspected cause (unverified)
+      description: Optional. If you or an AI have a theory about the cause, put it here and nowhere else. It's treated as a guess until someone confirms it.
+  - type: dropdown
+    id: ai-use
+    attributes:
+      label: AI use
+      description: How much of this report was written with AI?
+      options:
+        - No AI
+        - Assisted (I wrote it; AI helped investigate or edit)
+        - Generated (AI wrote it; I reviewed every fact)
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reproduced this myself on the latest version.
+          required: true
+        - label: I searched existing issues for duplicates.
+          required: true
